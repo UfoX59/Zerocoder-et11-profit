@@ -13,14 +13,27 @@ def is_profit (c, p):
     else:
         return False
 
+def extra_profit (c, p):
+    prof = p - c
+    if prof >= c * 2:
+        return True
+    else:
+        return False
 
-cost = 77
+
+cost = 120
 price = 100
 
-profit = profit_calculation(cost, price)
+profit = profit_calculation (cost, price)
 print(f"Прибыль составляет {profit}")
 
-if is_profit(cost, price):
-    print ("Удачная сделка, есть прибыль")
+if is_profit (cost, price):
+    print ("Хорошая сделка, есть прибыль")
 else:
     print("Не повезло, сделка убыточна")
+
+if is_profit(cost, price):
+    if extra_profit (cost, price):
+        print ("Супер удачная сделка, маржа зашкаливает")
+    else:
+        print("Обычная сделка, нормальная маржа")
